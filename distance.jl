@@ -91,8 +91,6 @@ function optimised(x::BFV, y::Vector{UInt64}, rlk::RLEV, rtk::Vector{RLEV}, pk::
         add_to!(ctout, ctout, tmp, rand)
 
         # ctout += y^2
-        # Bmul_to!(buff, y, y, evalT.Q)
-        # encode_to!(pty, buff, oper)
         encode_to!(pty, y, oper)
         mul_to!(pty, pty, pty, oper.operQ)
         add_to!(ctout, ctout, pty, rand)
